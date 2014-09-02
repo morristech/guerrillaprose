@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@drawable/list_row_selector"
+    android:padding="10dip" >
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/adapter_prose_icon_view">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/tag_item_selector"
+            android:id="@+id/adapter_prose_icon"
+            android:contentDescription="@string/image_adapter_content_description" />
+
+        <TextView
+            style="@style/textview_banner_style_grid_view"
+            android:layout_width="75dp"
+            android:textSize="12sp"
+            android:layout_marginTop="22dp"
+            android:paddingTop="6dp"
+            android:id="@+id/adapter_prose_icon_text"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:layout_toEndOf="@id/adapter_prose_icon_view"
+        android:layout_toRightOf="@id/adapter_prose_icon_view">
+
+        <!-- GuerrillaProse text -->
+        <TextView
+            android:id="@+id/adapter_prose_text"
+            android:hint="text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/transparent_grey_80"
+            android:textSize="12sp"
+            android:layout_marginTop="1dip"/>
+    </RelativeLayout>
+
+</RelativeLayout>

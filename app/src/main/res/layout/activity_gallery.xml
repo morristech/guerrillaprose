@@ -1,0 +1,29 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gallery_container"
+    android:background="@drawable/gp_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/gallery_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/gallery_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity" />
+
+    </android.support.v4.widget.DrawerLayout>
+
+    <ProgressBar
+        android:id="@+id/activity_gallery_progress_bar"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_centerInParent="true"
+        android:progressDrawable="@drawable/watermark"/>
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:weightSum="10"
+    android:background="@android:color/transparent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/write_fragment_edit_text"
+        android:layout_weight="9"
+        android:maxLength="333"
+        android:background="@android:color/transparent"
+        android:textColor="@color/transparent_grey_80"
+        android:inputType="textMultiLine|textAutoCorrect|textAutoComplete"
+        android:layout_gravity="center"
+        android:imeActionLabel="@string/fragment_write_send"
+        android:imeOptions="actionSend"
+        android:hint="@string/fragment_write_hint" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_write_iconSend"
+        android:layout_gravity="end|center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/ic_action_send_now"/>
+
+</LinearLayout>

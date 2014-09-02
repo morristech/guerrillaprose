@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    android:orientation="horizontal">
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/fragment_tag_progress_bar"
+        android:visibility="gone"
+        android:background="@color/transparent_white_50"/>
+
+    <GridView
+        android:id="@+id/fragment_tag_gridview"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:numColumns="auto_fit"
+        android:columnWidth="90dp"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
+        android:gravity="center_horizontal"
+        android:stretchMode="columnWidth"/>
+
+</RelativeLayout>

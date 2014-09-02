@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/activity_authenticator_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/activity_authenticator_background"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/authenticator_credential_container"
+        android:background="@color/transparent_white_80">
+
+        <EditText
+            android:id="@+id/activity_authenticator_email"
+            android:inputType="textEmailAddress"
+            style="@style/dialog_register_edittext"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/email" />
+
+        <EditText
+            android:id="@+id/activity_authenticator_password"
+            android:inputType="textPassword"
+            style="@style/dialog_register_edittext"
+            android:hint="@string/password"/>
+
+        <EditText
+            android:id="@+id/activity_authenticator_surname"
+            android:inputType="text"
+            style="@style/dialog_register_edittext"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/surname" />
+
+        <EditText
+            android:id="@+id/activity_authenticator_name"
+            android:hint="@string/name"
+            style="@style/dialog_register_edittext" />
+
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/authenticator_progress_bar"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/authenticator_credential_container"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent_grey_80"
+        style="?buttonBarStyle"
+        android:weightSum="2">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?buttonBarButtonStyle"
+            android:id="@+id/activity_authenticator_button_cancel"
+            android:text="@android:string/cancel"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?buttonBarButtonStyle"
+            android:id="@+id/activity_authenticator_button_ok"
+            android:text="@android:string/ok"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

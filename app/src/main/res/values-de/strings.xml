@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Guerrilla Prose</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="email">E-Mail</string>
+    <string name="surname">Vorname</string>
+    <string name="name">Nachname</string>
+    <string name="password">Passwort</string>
+
+    <string-array name="navigation_drawer_strings">
+        <item>Nutzer-Update</item>
+        <item>Nutzer entfernen</item>
+        <item>Nutzer-Wechsel</item>
+    </string-array>
+
+    <string name="fragment_write_send">Überprüfen</string>
+    <string name="fragment_write_hint">Beginne Dein neues Leben mit guerrilla prose</string>
+
+    <string name="dialog_verification_tag_hint">Tag</string>
+    <string name="dialog_verification_title_hint">Titel</string>
+    <string name="dialog_verification_content_hint">Prose</string>
+    <string name="dialog_verify_title">Verifiziere Dein Passwort</string>
+
+    <string name="dialog_delete_title">Wirklich löschen?</string>
+
+    <string name="dialog_register_provide_essential_data">Nutzerdaten unvollständig</string>
+    <string name="authenticator_delete_user">Nutzer entfernen</string>
+
+
+    <string name="title_activity_splash_">Splash Activity</string>
+
+    <string name="image_adapter_content_description">grid_image</string>
+
+    <string name="title_prose_list">Prose</string>
+    <string name="title_prose_detail">Prose Details</string>
+
+    <string name="first_start_register">Der Neubeginn! Werde Guerilla…</string>
+    <string name="server_unreachbale">Der Server antwortet gerade nicht. Nutze trotzdem die Offline-Funktionalität</string>
+    <string name="offline_user">Nutzeroperation nur mit funktionierendem Server möglich, soorry</string>
+
+    <string name="title_activity_authenticator">Authenticator Activity</string>
+
+    <string name="close_app">Nochmaliges Drücken beendet die App</string>
+
+    <string name="action_help">Hilfe</string>
+    <string name="action_delete_all_media">Serverkiller</string>
+    <string name="action_get_old_media">Serversauger</string>
+    <string name="action_restart_app">App Neustart</string>
+
+
+    <string name="server_error">Fehler bei der Server-Kommunikation</string>
+    <string name="server_temporarily_not_available">Der Server ist gerade nicht erreichbar…</string>
+    <string name="server_method_not_available">Die Methode ist auf dem Server nicht vorhanden</string>
+
+
+    <string name="no_user">Du musst vorher einen Nutzer anlegen</string>
+    <string name="no_tag">Kein Tag</string>
+    <string name="author">Autor</string>
+
+    <string name="home">Prose</string>
+    <string name="device">Gerät</string>
+    <string name="server">Server</string>
+
+    <string name="shared">öffentlich</string>
+
+    <string name="no_network">Keine Internetverbindung. \n Aktiviere das Netz und lade neu.</string>
+    <string name="user">Nutzer</string>
+    <string name="local_not_saved">guerrilla prose lokal nicht gespeichert</string>
+
+    <string name="wrong_credentials">Dein Passwort stimmt nicht</string>
+    <string name="authentication_no_valid_email">Das ist keine gültige E-Mail-Adresse</string>
+    <string name="old_email">Schon angemeldet</string>
+    <string name="user_created">Nutzer angelegt</string>
+    <string name="user_deleted">Nutzer vom Server entfernt</string>
+
+
+</resources>

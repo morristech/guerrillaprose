@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Guerrilla Prose</string>
+    <string name="action_settings">Settings</string>
+    <string name="email">email address</string>
+    <string name="surname">surname</string>
+    <string name="name">name</string>
+    <string name="password">password</string>
+
+    <string-array name="navigation_drawer_strings">
+        <item>User</item>
+        <item>Delete User</item>
+        <item>Change User</item>
+    </string-array>
+
+    <string name="fragment_write_send">review</string>
+    <string name="fragment_write_hint">start writing your great guerrilla prose</string>
+    <string name="dialog_verification_tag_hint">tag</string>
+    <string name="dialog_verification_title_hint">title</string>
+    <string name="dialog_verification_content_hint">prose</string>
+    <string name="dialog_delete_title">Really delete?</string>
+    <string name="title_activity_splash_">Splash_Activity</string>
+    <string name="image_adapter_content_description">grid_image</string>
+    <string name="title_prose_list">Prose</string>
+    <string name="title_prose_detail">Prose Detail</string>
+    <string name="first_start_register">Your first start! Create a user…</string>
+    <string name="dialog_register_provide_essential_data">user credentials</string>
+    <string name="server_unreachbale">The server is currently not reachable. Starting with offline functionality.</string>
+    <string name="dialog_verify_title">Enter your password</string>
+    <string name="title_activity_authenticator">AuthenticatorActivity</string>
+    <string name="authenticator_delete_user">delete user</string>
+    <string name="offline_user">For updating the user the server has to be reachable</string>
+    <string name="close_app">Press again to close this app</string>
+    <string name="action_help">Help</string>
+    <string name="server_error">Error while communicating with server</string>
+    <string name="no_user">you have to create a user before using the app</string>
+    <string name="no_tag">no tag</string>
+    <string name="server_temporarily_not_available">The server is temporarilly not available</string>
+    <string name="author">author</string>
+    <string name="home">home</string>
+    <string name="device">device</string>
+    <string name="server">server</string>
+    <string name="shared">public</string>
+    <string name="server_method_not_available">Method is not available on server</string>
+    <string name="no_network">No Network Connection. \n Activate internet and reload</string>
+    <string name="action_delete_all_media">Wipe Server</string>
+    <string name="action_get_old_media">Pull Server</string>
+    <string name="action_restart_app">Restart App</string>
+    <string name="user">User</string>
+    <string name="local_not_saved">guerrilla prose locally not saved</string>
+    <string name="wrong_credentials">your password does not match…</string>
+    <string name="authentication_no_valid_email" />
+    <string name="old_email">already registered</string>
+    <string name="user_created">user sucessfully created</string>
+    <string name="user_deleted">user sucessfully deleted on our servers</string>
+
+</resources>

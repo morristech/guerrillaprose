@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_white_80"
+    tools:context="de.handler.mobile.android.bachelorapp.app.ui.BigPictureActivity">
+
+    <ImageView
+        android:id="@+id/activity_big_picture_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside" />
+
+    <TextView
+        style="@style/textview_banner_style"
+        android:text="@string/app_name"/>
+
+    <TextView
+        style="@style/textview_banner_style_grid_view"
+        android:layout_width="match_parent"
+        android:layout_alignBottom="@id/activity_big_picture_image_view"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:id="@+id/activity_big_picture_text_view"
+        android:textColor="@color/transparent_white_20"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_big_picture_image_view_flickr_credits"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="on flickr"
+        android:visibility="gone"
+        android:layout_alignBottom="@id/activity_big_picture_image_view"
+        android:textColor="@color/transparent_grey_80"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Guerrilla Prose</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="email">émail</string>
+    <string name="surname">prénom</string>
+    <string name="name">nom</string>
+    <string name="password">mot de passe</string>
+
+    <string name="user">Usager</string>
+    <string-array name="navigation_drawer_strings">
+        <item>Usager</item>
+        <item>Effacer Usager</item>
+        <item>Change Usager</item>
+    </string-array>
+
+    <string name="fragment_write_send">révision</string>
+    <string name="fragment_write_hint">commence ton guerrilla prose</string>
+    <string name="dialog_verification_tag_hint">mot-clé</string>
+    <string name="dialog_verification_title_hint">titre</string>
+    <string name="dialog_verification_content_hint">prose</string>
+    <string name="dialog_delete_title">supprimer?</string>
+    <string name="title_activity_splash_">Splash_Activity</string>
+    <string name="image_adapter_content_description">grid_image</string>
+    <string name="title_prose_list">Prose</string>
+    <string name="title_prose_detail">Prose Detail</string>
+    <string name="first_start_register">Le début! Crées un usager…</string>
+    <string name="dialog_register_provide_essential_data">Données usager</string>
+    <string name="server_unreachbale">Le serveur n\'est pas accessible.</string>
+    <string name="dialog_verify_title">Ton mot de passe</string>
+    <string name="title_activity_authenticator">AuthenticatorActivity</string>
+    <string name="authenticator_delete_user">Effacer Usager</string>
+
+    <string name="offline_user">Pour le mise à jour le serveur doit être accessible</string>
+    <string name="close_app">Tapes encore pour fermer</string>
+    <string name="action_help">Aide</string>
+    <string name="server_error">Erreur pendant la communication avec le serveur</string>
+    <string name="no_user">Crées un usager avant d\'utiliser l\'appli</string>
+    <string name="no_tag">aucun mot-clé</string>
+    <string name="server_temporarily_not_available">Le serveur n\'est pas disponible pour l\'instance</string>
+    <string name="author">auteur/e</string>
+
+    <string name="home">Prose</string>
+    <string name="device">Local</string>
+    <string name="server">Serveur</string>
+
+    <string name="shared">public</string>
+    <string name="server_method_not_available">Erreur pendant la communication avec le serveur</string>
+
+    <string name="no_network">aucune connection avec l\'internet. \n Active le et redémarre</string>
+    <string name="action_delete_all_media">Wipe Server</string>
+    <string name="action_get_old_media">Pull Server</string>
+    <string name="action_restart_app">Redémarrage</string>
+    <string name="local_not_saved">guerrilla prose n\'est pas enregistré</string>
+
+    <string name="wrong_credentials">ton mot de passe n\'est pas juste…</string>
+    <string name="authentication_no_valid_email">Le mot de passe n\'est pas valid</string>
+    <string name="old_email">déjà enrégistré</string>
+    <string name="user_created">usager enrégistré</string>
+    <string name="user_deleted">usager éffacé</string>
+</resources>

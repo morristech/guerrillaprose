@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:id="@+id/dialog_verification_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/dialog_verification_background_image_container">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/dialog_verification_background_image"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/dialog_verification_image_artist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_alignBottom="@id/dialog_verification_background_image"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/transparent_white_20"/>
+
+        </RelativeLayout>
+
+
+
+        <!-- remote fields just to look at -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialog_verification_container_remote"
+            android:visibility="gone"
+            android:layout_below="@id/dialog_verification_background_image_container"
+            android:background="@color/transparent_white_20"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/transparent_grey_80"
+                android:id="@+id/dialog_verification_tag_remote"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="20sp"
+                android:textColor="@android:color/darker_gray"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:id="@+id/dialog_verification_title_remote"
+                android:layout_margin="20dp"
+                android:textSize="30sp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dialog_verification_content_remote"
+                android:background="@android:color/transparent"
+                android:layout_margin="20dp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_weight="8"
+                android:maxLength="333" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:id="@+id/dialog_verification_author"
+                android:gravity="bottom|end"
+                android:layout_gravity="center_horizontal|end"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/transparent_grey_80"/>
+
+        </LinearLayout>
+
+
+        <!-- local editable fields -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialog_verification_container_local"
+            android:layout_below="@id/dialog_verification_background_image_container"
+            android:background="@color/transparent_white_20"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_weight="1">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent_grey_80"
+                    android:id="@+id/dialog_verification_tag"
+                    android:inputType="text"
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/darker_gray"
+                    android:hint="@string/dialog_verification_tag_hint"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/dialog_verification_checkbox"
+                    android:layout_alignEnd="@id/dialog_verification_tag"
+                    android:layout_alignRight="@id/dialog_verification_tag"
+                    android:gravity="center_vertical"
+                    android:text="@string/shared"
+                    android:textColor="@android:color/darker_gray"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:checked="false" />
+
+
+            </RelativeLayout>
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:id="@+id/dialog_verification_title"
+                android:inputType="text|textAutoComplete"
+                android:layout_margin="20dp"
+                android:textSize="30sp"
+                android:textColor="@android:color/darker_gray"
+                android:hint="@string/dialog_verification_title_hint"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dialog_verification_content"
+                android:inputType="text|textAutoCorrect|textMultiLine"
+                android:imeOptions="actionDone"
+                android:background="@android:color/transparent"
+                android:layout_margin="20dp"
+                android:textColor="@android:color/darker_gray"
+                android:hint="@string/dialog_verification_content_hint"
+                android:layout_weight="8"
+                android:maxLength="333" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
