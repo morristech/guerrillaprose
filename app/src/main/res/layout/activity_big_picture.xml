@@ -14,6 +14,7 @@
 
     <TextView
         style="@style/textview_banner_style"
+        android:id="@+id/activity_big_picture_title_textview"
         android:text="@string/app_name"/>
 
     <TextView

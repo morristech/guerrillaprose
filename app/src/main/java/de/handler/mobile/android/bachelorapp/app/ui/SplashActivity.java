@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterInject;
@@ -83,6 +85,17 @@ public class SplashActivity extends Activity implements OnFlickrListener, OnPros
     @ViewById(R.id.progress_bar_round)
     ProgressBar mProgressBarRound;
 
+
+    @ViewById(R.id.splashTitle_text)
+    TextView mTitleText;
+
+    @ViewById(R.id.splash_status_textview)
+    TextView mStatusText;
+
+    @ViewById(R.id.splash_network_textview)
+    TextView mNetworkText;
+
+
     private int mProgress = 0;
     private final Context mFinalContext = this;
 
@@ -95,6 +108,12 @@ public class SplashActivity extends Activity implements OnFlickrListener, OnPros
 
     @AfterViews
     void init() {
+        // Create custom typeface
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Thin.ttf");
+        mTitleText.setTypeface(myTypeface);
+        mStatusText.setTypeface(myTypeface);
+        mNetworkText.setTypeface(myTypeface);
+
         // init dao session for app context as recommended by green dao
         app.openDaoSession();
 

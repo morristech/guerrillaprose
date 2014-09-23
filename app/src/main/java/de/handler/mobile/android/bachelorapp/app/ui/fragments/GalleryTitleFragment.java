@@ -2,6 +2,7 @@ package de.handler.mobile.android.bachelorapp.app.ui.fragments;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.view.View;
@@ -40,11 +41,21 @@ public class GalleryTitleFragment extends Fragment implements View.OnClickListen
     @ViewById(R.id.fragment_gallery_title_image_author)
     TextView mCredits;
 
+    @ViewById(R.id.fragment_gallery_title_banner)
+    TextView mTitleBanner;
+
     private Bitmap mBitmap;
 
     @Background
     @AfterViews
     void init() {
+        // Create custom typeface
+        Typeface myTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Thin.ttf");
+        if (myTypeface != null) {
+            mTitleBanner.setTypeface(myTypeface);
+            mCredits.setTypeface(myTypeface);
+        }
+
         int position = getArguments().getInt(ProseGalleryActivity.GALLERY_POSITION_EXTRA);
         mBitmap = app.getPagerImages().get(position);
         mImage.setImageBitmap(mBitmap);

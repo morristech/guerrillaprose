@@ -52,11 +52,15 @@ public class ProseListAdapter extends BaseAdapter {
 
         // "recycled view" design pattern
         if (convertView == null) {
+            // Create custom typeface
+            //Typeface myTypeface = Typeface.createFromAsset(mContext.getAssets(), "fonts/Roboto-Thin.ttf");
+
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.adapter_prose_list_item, null);
 
             ImageView image = (ImageView) view.findViewById(R.id.adapter_prose_icon);
             TextView imageText = (TextView) view.findViewById(R.id.adapter_prose_icon_text);
+            //imageText.setTypeface(myTypeface);
 
             TextView text = (TextView) view.findViewById(R.id.adapter_prose_text);
 

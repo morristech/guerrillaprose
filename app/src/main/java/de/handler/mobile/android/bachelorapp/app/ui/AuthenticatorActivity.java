@@ -1,5 +1,6 @@
 package de.handler.mobile.android.bachelorapp.app.ui;
 
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -94,6 +95,14 @@ public class AuthenticatorActivity extends BaseActivity implements OnUserListene
 
     @AfterViews
     void init() {
+
+        // Create custom typeface
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Thin.ttf");
+        mSurnameEditText.setTypeface(myTypeface);
+        mNameEditText.setTypeface(myTypeface);
+        mEmailEditText.setTypeface(myTypeface);
+        mPasswordEditText.setTypeface(myTypeface);
+
         // Set up the action bar.
         ActionBar actionBar = setupActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(R.color.transparent_grey_80));

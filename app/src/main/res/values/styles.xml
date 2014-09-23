@@ -2,21 +2,9 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.Base.AppCompat.Light.DarkActionBar">
-        <item name="android:actionBarStyle">@style/ActionBar</item>
-        <item name="android:popupMenuStyle">@style/BachelorApp.PopupMenu</item>
-        <!-- Support library compatibility -->
-        <item name="actionBarStyle">@style/ActionBar</item>
+
     </style>
 
-    <style name="ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">#00000000</item>
-        <!-- Support library compatibility -->
-        <item name="background">@android:color/transparent</item>
-    </style>
-
-    <style name="BachelorApp.PopupMenu" parent="android:Widget.Holo.Light.ListPopupWindow">
-        <item name="android:popupBackground">#00000000</item>
-    </style>
 
     <style name="dialog_register_edittext">
         <item name="android:inputType">text</item>

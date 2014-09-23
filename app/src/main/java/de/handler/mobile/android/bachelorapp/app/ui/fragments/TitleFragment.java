@@ -3,6 +3,7 @@ package de.handler.mobile.android.bachelorapp.app.ui.fragments;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
@@ -42,6 +43,9 @@ public class TitleFragment extends Fragment implements View.OnClickListener {
     @ViewById(R.id.fragmentTitle_image_author)
     TextView mImageTextView;
 
+    @ViewById(R.id.fragmentTitle_text)
+    TextView mFragmentTitleText;
+
     @Bean
     MediaController mediaController;
 
@@ -54,6 +58,8 @@ public class TitleFragment extends Fragment implements View.OnClickListener {
 
     @AfterViews
     void init() {
+        // Create custom typeface
+        Typeface myTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Thin.ttf");
 
         mBitmap = app.getTitleImage();
 
@@ -64,6 +70,8 @@ public class TitleFragment extends Fragment implements View.OnClickListener {
         }
 
         mImageTextView.setText(app.getTitleImageAuthor());
+        mImageTextView.setTypeface(myTypeface);
+        mFragmentTitleText.setTypeface(myTypeface);
 
         mImageView.setOnClickListener(this);
         mCameraButton.setOnClickListener(this);

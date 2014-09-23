@@ -8,6 +8,114 @@
         revision="19.1.0"
         sha1="dda08161d004c4df96938da6909f1c2b96cd33c8"/>
     <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/freemarker-2.3.20-16f5b76f170b3b90c9fbc8489ecfc52d0bd32b8e.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.20/5ad6bea46b5af666d88c260c8acc6a03408723c8/freemarker-2.3.20.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="5ad6bea46b5af666d88c260c8acc6a03408723c8"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/GuerillaProse/app/build/intermediates/pre-dexed/debug/robolectric-2.4-SNAPSHOT-881947f841fa2f35a35dd90a5fd9980814ec03be.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.robolectric/robolectric/2.4-SNAPSHOT/df4672ff2ad7d8232f47d967284cc011638b7825/robolectric-2.4-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="df4672ff2ad7d8232f47d967284cc011638b7825"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/asm-util-5.0.1-2ad30e18481ce0204aeb873f181f4499939d69cf.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/5.0.1/7c8caddfbd0b2d7b844f8fcc75175b9cb9cf4724/asm-util-5.0.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="7c8caddfbd0b2d7b844f8fcc75175b9cb9cf4724"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/greendao-generator-1.3.1-178d699cd3f5c52a6134c378d6d5ea2f97459de6.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/de.greenrobot/greendao-generator/1.3.1/2f757df97b422e40bf99f71094e5d105c98f32e7/greendao-generator-1.3.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="2f757df97b422e40bf99f71094e5d105c98f32e7"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/maven-ant-tasks-2.1.3-bf8a816242302e17a7920a1737eb8fd06f04034e.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-ant-tasks/2.1.3/b09be554228d66d208e5fef5266844aacf443abc/maven-ant-tasks-2.1.3.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="b09be554228d66d208e5fef5266844aacf443abc"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/vtd-xml-2.11-ac536ccc8d95905bce988791530bd5fb705ffd99.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/com.ximpleware/vtd-xml/2.11/ee5bcf62c1acf76434ee9f1c67a840bafef72a6d/vtd-xml-2.11.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="ee5bcf62c1acf76434ee9f1c67a840bafef72a6d"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/fest-util-1.2.5-88877b66e78364a0ca32538e44d43dee00ea9470.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.easytesting/fest-util/1.2.5/c4a8d7305b23b8d043be12c979813b096df11f44/fest-util-1.2.5.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="c4a8d7305b23b8d043be12c979813b096df11f44"/>
+    <item
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/androidannotations-api-3.2-SNAPSHOT-1d5b882b7d46062d58fb78d77f4f03a155f84a4a.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.2-SNAPSHOT/35df58535c6bc7b445ca16120a020f6c6b3531f2/androidannotations-api-3.2-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="35df58535c6bc7b445ca16120a020f6c6b3531f2"/>
+    <item
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/robolectric-2.4-SNAPSHOT-458546d7f44f6de08eff55abc7c7bee6901033fe.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.robolectric/robolectric/2.4-SNAPSHOT/ed8b6d399c858b5a4379ceb3f32de94aeca4bed3/robolectric-2.4-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="ed8b6d399c858b5a4379ceb3f32de94aeca4bed3"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/classes-45b0a32527f7c1280baf9d689206d13e08de7a68.jar"
+        jar="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/ant-launcher-1.8.0-ce07e3d5034f352903296d912e2842ce76a04fc0.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.8.0/8b53ba16fa62fb1034da8f1de200ddc407c8381/ant-launcher-1.8.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="08b53ba16fa62fb1034da8f1de200ddc407c8381"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/GuerillaProse/app/build/intermediates/pre-dexed/debug/classes-9ee0b84fbbd6e8e1c3962fbe03b9f6af561d8ad7.jar"
+        jar="/media/Daten/Dropbox/Development/Android/GuerillaProse/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/asm-5.0.1-4d7f2dad3016a265f210d7dea97ab40a53ddd97a.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.0.1/2fd56467a018aafe6ec6a73ccba520be4a7e1565/asm-5.0.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="2fd56467a018aafe6ec6a73ccba520be4a7e1565"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/objenesis-1.3-8fac38a311b75497e3488300e47de79acf28606c.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/1.3/dc13ae4faca6df981fc7aeb5a522d9db446d5d50/objenesis-1.3.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="dc13ae4faca6df981fc7aeb5a522d9db446d5d50"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/spring-android-rest-template-1.0.1.RELEASE-04d0ab71c9b43abc899b9eed94fd07b1a778127d.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.springframework.android/spring-android-rest-template/1.0.1.RELEASE/e132d929bd181941f79b0d63edafb8a86ae6fd33/spring-android-rest-template-1.0.1.RELEASE.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e132d929bd181941f79b0d63edafb8a86ae6fd33"/>
+    <item
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/classes-7a783ca1d6f41a972a029103eb646ced4e4e05ed.jar"
+        jar="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="af4cc326e6cd92f88db12298767e521743aedd36"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/ant-1.8.0-862f06a9f23d9f835e05b2aae512491016648fda.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.8.0/7b456ca6b93900f96e58cc8371f03d90a9c1c8d1/ant-1.8.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="7b456ca6b93900f96e58cc8371f03d90a9c1c8d1"/>
+    <item
+        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/sqlite4java-0.282-6c61862358a6161ea2333d68c4fb64c39e76b468.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/com.almworks.sqlite4java/sqlite4java/0.282/745a7e2f35fdbe6336922e0d492c979dbbfa74fb/sqlite4java-0.282.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="745a7e2f35fdbe6336922e0d492c979dbbfa74fb"/>
+    <item
         dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/asm-commons-5.0.1-483568f5ed3f3a6b3dfd1e6aaca56b8436f94c81.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/5.0.1/7b7147a390a93a14d2edfdcf3f7b0e87a0939c3e/asm-commons-5.0.1.jar"
         jumboMode="false"
@@ -26,12 +134,6 @@
         revision="19.1.0"
         sha1="af4cc326e6cd92f88db12298767e521743aedd36"/>
     <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/freemarker-2.3.20-16f5b76f170b3b90c9fbc8489ecfc52d0bd32b8e.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.freemarker/freemarker/2.3.20/5ad6bea46b5af666d88c260c8acc6a03408723c8/freemarker-2.3.20.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="5ad6bea46b5af666d88c260c8acc6a03408723c8"/>
-    <item
         dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/fest-assert-core-2.0M10-9bc5d2cfa7704384af35daf798a78233d279ff24.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.easytesting/fest-assert-core/2.0M10/cb7c91cf614901928ae405f19d9bcdedf82781db/fest-assert-core-2.0M10.jar"
         jumboMode="false"
@@ -44,29 +146,11 @@
         revision="19.1.0"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
     <item
-        dex="/media/Daten/Dropbox/Development/Android/GuerillaProse/app/build/intermediates/pre-dexed/debug/robolectric-2.4-SNAPSHOT-881947f841fa2f35a35dd90a5fd9980814ec03be.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.robolectric/robolectric/2.4-SNAPSHOT/df4672ff2ad7d8232f47d967284cc011638b7825/robolectric-2.4-SNAPSHOT.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="df4672ff2ad7d8232f47d967284cc011638b7825"/>
-    <item
         dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/commons-codec-1.3-b58b3d73fc56fbc6a186f618ed644052717f3013.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.3/fd32786786e2adb664d5ecc965da47629dca14ba/commons-codec-1.3.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="fd32786786e2adb664d5ecc965da47629dca14ba"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/asm-util-5.0.1-2ad30e18481ce0204aeb873f181f4499939d69cf.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/5.0.1/7c8caddfbd0b2d7b844f8fcc75175b9cb9cf4724/asm-util-5.0.1.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="7c8caddfbd0b2d7b844f8fcc75175b9cb9cf4724"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/greendao-generator-1.3.1-178d699cd3f5c52a6134c378d6d5ea2f97459de6.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/de.greenrobot/greendao-generator/1.3.1/2f757df97b422e40bf99f71094e5d105c98f32e7/greendao-generator-1.3.1.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="2f757df97b422e40bf99f71094e5d105c98f32e7"/>
     <item
         dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/spring-android-core-1.0.1.RELEASE-f9a0ffec955dafb058eb2c57a9b1b66ef658a259.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.springframework.android/spring-android-core/1.0.1.RELEASE/e68f0e8e4b636ee30c4de58953be38d9b72a5e3b/spring-android-core-1.0.1.RELEASE.jar"
@@ -80,38 +164,14 @@
         revision="19.1.0"
         sha1="e286fbee48efacb4e7c175f7948d9d8b2ab52352"/>
     <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/maven-ant-tasks-2.1.3-bf8a816242302e17a7920a1737eb8fd06f04034e.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-ant-tasks/2.1.3/b09be554228d66d208e5fef5266844aacf443abc/maven-ant-tasks-2.1.3.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="b09be554228d66d208e5fef5266844aacf443abc"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/vtd-xml-2.11-ac536ccc8d95905bce988791530bd5fb705ffd99.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/com.ximpleware/vtd-xml/2.11/ee5bcf62c1acf76434ee9f1c67a840bafef72a6d/vtd-xml-2.11.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="ee5bcf62c1acf76434ee9f1c67a840bafef72a6d"/>
-    <item
         dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/asm-tree-5.0.1-9500aa64b7f135756c2ad4322faf6f9512edc202.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/5.0.1/1b1e6e9d869acd704056d0a4223071a511c619e6/asm-tree-5.0.1.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="1b1e6e9d869acd704056d0a4223071a511c619e6"/>
     <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/fest-util-1.2.5-88877b66e78364a0ca32538e44d43dee00ea9470.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.easytesting/fest-util/1.2.5/c4a8d7305b23b8d043be12c979813b096df11f44/fest-util-1.2.5.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="c4a8d7305b23b8d043be12c979813b096df11f44"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/ant-launcher-1.8.0-ce07e3d5034f352903296d912e2842ce76a04fc0.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.8.0/8b53ba16fa62fb1034da8f1de200ddc407c8381/ant-launcher-1.8.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="08b53ba16fa62fb1034da8f1de200ddc407c8381"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/classes-45b0a32527f7c1280baf9d689206d13e08de7a68.jar"
-        jar="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/classes-a15135ea6d91821e371e1082750186fff139c3d2.jar"
+        jar="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
@@ -139,30 +199,6 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="a85f4ca4e8677407b71a3fd38a560d59ea7e5318"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/GuerillaProse/app/build/intermediates/pre-dexed/debug/classes-9ee0b84fbbd6e8e1c3962fbe03b9f6af561d8ad7.jar"
-        jar="/media/Daten/Dropbox/Development/Android/GuerillaProse/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/asm-5.0.1-4d7f2dad3016a265f210d7dea97ab40a53ddd97a.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.0.1/2fd56467a018aafe6ec6a73ccba520be4a7e1565/asm-5.0.1.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="2fd56467a018aafe6ec6a73ccba520be4a7e1565"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/objenesis-1.3-8fac38a311b75497e3488300e47de79acf28606c.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/1.3/dc13ae4faca6df981fc7aeb5a522d9db446d5d50/objenesis-1.3.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="dc13ae4faca6df981fc7aeb5a522d9db446d5d50"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/spring-android-rest-template-1.0.1.RELEASE-04d0ab71c9b43abc899b9eed94fd07b1a778127d.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.springframework.android/spring-android-rest-template/1.0.1.RELEASE/e132d929bd181941f79b0d63edafb8a86ae6fd33/spring-android-rest-template-1.0.1.RELEASE.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="e132d929bd181941f79b0d63edafb8a86ae6fd33"/>
     <item
         dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/classes-7ddb95aa2a0ecf5b7465693802dc3636a1391f55.jar"
         jar="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/19.1.0/classes.jar"
@@ -193,17 +229,5 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="6975da39a7040257bd51d21a231b76c915872d38"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/ant-1.8.0-862f06a9f23d9f835e05b2aae512491016648fda.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.8.0/7b456ca6b93900f96e58cc8371f03d90a9c1c8d1/ant-1.8.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="7b456ca6b93900f96e58cc8371f03d90a9c1c8d1"/>
-    <item
-        dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/sqlite4java-0.282-6c61862358a6161ea2333d68c4fb64c39e76b468.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/com.almworks.sqlite4java/sqlite4java/0.282/745a7e2f35fdbe6336922e0d492c979dbbfa74fb/sqlite4java-0.282.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="745a7e2f35fdbe6336922e0d492c979dbbfa74fb"/>
 
 </pre-dex-items>

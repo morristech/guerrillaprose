@@ -2,6 +2,7 @@ package de.handler.mobile.android.bachelorapp.app.ui.adapters;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -55,8 +56,12 @@ public class ImageTagAdapter extends BaseAdapter {
         // as it showed the tags in unpredictable order, sometimes twice, sometimes false
         view = inflater.inflate(mLayoutFile, null);
 
+        // Create custom typeface
+        Typeface myTypeface = Typeface.createFromAsset(mContext.getAssets(), "fonts/Roboto-Thin.ttf");
+
         ImageView imageView = (ImageView) view.findViewById(R.id.image_adapter_image);
         TextView textView = (TextView) view.findViewById(R.id.image_adapter_text);
+        textView.setTypeface(myTypeface);
 
         if (mTags.size() < 1) {
             textView.setVisibility(View.GONE);
