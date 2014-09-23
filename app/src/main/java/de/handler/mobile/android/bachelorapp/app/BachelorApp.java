@@ -50,6 +50,7 @@ public class BachelorApp extends Application {
     private List<Bitmap> pagerImages = new ArrayList<Bitmap>();
     private List<String> pagerAuthors = new ArrayList<String>();
 
+    private DaoSession mDaoSession;
     private MediaTypeDao mediaTypeDao;
     private MediaDao mediaDao;
     private GuerrillaDao guerrillaDao;
@@ -183,27 +184,11 @@ public class BachelorApp extends Application {
         DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, "guerrillaprose-db", null);
         SQLiteDatabase db = helper.getWritableDatabase();
         DaoMaster daoMaster = new DaoMaster(db);
-        DaoSession daoSession = daoMaster.newSession();
-        guerrillaProseDao = daoSession.getGuerrillaProseDao();
-        mediaDao = daoSession.getMediaDao();
-        guerrillaDao = daoSession.getGuerrillaDao();
-        mediaTypeDao = daoSession.getMediaTypeDao();
+        mDaoSession = daoMaster.newSession();
     }
 
-    public MediaTypeDao getMediaTypeDao() {
-        return mediaTypeDao;
-    }
-
-    public MediaDao getMediaDao() {
-        return mediaDao;
-    }
-
-    public GuerrillaDao getGuerrillaDao() {
-        return guerrillaDao;
-    }
-
-    public GuerrillaProseDao getGuerrillaProseDao() {
-        return guerrillaProseDao;
+    public DaoSession getDaoSession() {
+        return mDaoSession;
     }
 
     public String getTitleImageAuthor() {
@@ -245,6 +230,7 @@ public class BachelorApp extends Application {
     public void addPagerAuthor(String pagerAuthor) {
         this.pagerAuthors.add(pagerAuthor);
     }
+
 
     public static class Sorter implements Comparator<Tag> {
 

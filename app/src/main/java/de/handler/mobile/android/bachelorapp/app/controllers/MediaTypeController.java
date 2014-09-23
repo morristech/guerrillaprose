@@ -76,7 +76,7 @@ public class MediaTypeController {
      * that database is kept open until app closes. Recommended way by green dao
      */
     private void openDatabase() {
-        mMediaTypeDao = app.getMediaTypeDao();
+        mMediaTypeDao = app.getDaoSession().getMediaTypeDao();
     }
 
 

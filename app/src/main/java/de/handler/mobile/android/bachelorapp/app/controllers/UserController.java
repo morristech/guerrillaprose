@@ -69,7 +69,7 @@ public class UserController {
      * that database is kept open until app closes. Recommended way by green dao
      */
     private void openDatabase(){
-        mUserDao = app.getGuerrillaDao();
+        mUserDao = app.getDaoSession().getGuerrillaDao();
     }
 
 

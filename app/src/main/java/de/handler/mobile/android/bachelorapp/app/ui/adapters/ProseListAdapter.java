@@ -51,7 +51,7 @@ public class ProseListAdapter extends BaseAdapter {
         View view;
 
         // "recycled view" design pattern
-        if (convertView == null) {
+        //if (convertView == null) {
             // Create custom typeface
             //Typeface myTypeface = Typeface.createFromAsset(mContext.getAssets(), "fonts/Roboto-Thin.ttf");
 
@@ -73,9 +73,9 @@ public class ProseListAdapter extends BaseAdapter {
             imageText.setText(mGuerrillaProseList.get(position).getTitle());
             text.setText(mGuerrillaProseList.get(position).getText());
 
-        } else {
-            view = convertView;
-        }
+        //} else {
+        //    view = convertView;
+        //}
         return view;
     }
 

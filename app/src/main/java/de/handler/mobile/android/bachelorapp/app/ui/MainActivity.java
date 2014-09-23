@@ -574,7 +574,9 @@ public class MainActivity extends BaseActivity  implements ActionBar.TabListener
     public void onRemoteProseByUserReceived(List<GuerrillaProse> proseList) {
 
         ArrayList<GuerrillaProse> locals =
-                new ArrayList<GuerrillaProse>(app.getGuerrillaProseDao().loadAll());
+                new ArrayList<GuerrillaProse>(app.getDaoSession()
+                        .getGuerrillaProseDao()
+                        .loadAll());
 
         ArrayList<Long> localRemoteIds = new ArrayList<Long>(locals.size());
 

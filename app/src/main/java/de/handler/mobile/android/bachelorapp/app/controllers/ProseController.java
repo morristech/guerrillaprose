@@ -87,9 +87,10 @@ public class ProseController {
      * get the database session from the application context to ensure
      * that database is kept open until app closes. Recommended way by green dao
      */
-    private void openDatabase(){
-        mProseDao = app.getGuerrillaProseDao();
+    private void openDatabase() {
+        mProseDao = app.getDaoSession().getGuerrillaProseDao();
     }
+
 
 
     /**
