@@ -1,7 +1,10 @@
 package de.handler.mobile.android.bachelorapp.app.database;
 
+
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import java.util.List;
 
 import de.greenrobot.dao.DaoException;
 
@@ -10,7 +13,6 @@ import de.greenrobot.dao.DaoException;
 // KEEP INCLUDES END
 /**
  * Entity mapped to table MEDIA.
-  * Implements the Parcelable interface to be send by bundles
  */
 public class Media implements android.os.Parcelable {
 
@@ -27,9 +29,10 @@ public class Media implements android.os.Parcelable {
     /** Used for active entity operations. */
     private transient MediaDao myDao;
 
-    private Media media;
-    private Long media__resolvedKey;
+    private MediaType mediaType;
+    private Long mediaType__resolvedKey;
 
+    private List<GuerrillaProse> guerrillaProseList;
 
     // KEEP FIELDS - put your custom fields here
     // KEEP FIELDS END
@@ -98,31 +101,52 @@ public class Media implements android.os.Parcelable {
     }
 
     /** To-one relationship, resolved on first access. */
-    public Media getMedia() {
+    public MediaType getMediaType() {
         Long __key = this.media_type_id;
-        if (media__resolvedKey == null || !media__resolvedKey.equals(__key)) {
+        if (mediaType__resolvedKey == null || !mediaType__resolvedKey.equals(__key)) {
             if (daoSession == null) {
                 throw new DaoException("Entity is detached from DAO context");
             }
-            MediaDao targetDao = daoSession.getMediaDao();
-            Media mediaNew = targetDao.load(__key);
+            MediaTypeDao targetDao = daoSession.getMediaTypeDao();
+            MediaType mediaTypeNew = targetDao.load(__key);
             synchronized (this) {
-                media = mediaNew;
-            	media__resolvedKey = __key;
+                mediaType = mediaTypeNew;
+            	mediaType__resolvedKey = __key;
             }
         }
-        return media;
+        return mediaType;
     }
 
-    public void setMedia(Media media) {
+    public void setMediaType(MediaType mediaType) {
         synchronized (this) {
-            this.media = media;
-            media_type_id = media == null ? null : media.getId();
-            media__resolvedKey = media_type_id;
+            this.mediaType = mediaType;
+            media_type_id = mediaType == null ? null : mediaType.getId();
+            mediaType__resolvedKey = media_type_id;
         }
     }
 
-    /** Convenient call for {@link AbstractDao#delete(Object)}. Entity must attached to an entity context. */
+    /** To-many relationship, resolved on first access (and after reset). Changes to to-many relations are not persisted, make changes to the target entity. */
+    public List<GuerrillaProse> getGuerrillaProseList() {
+        if (guerrillaProseList == null) {
+            if (daoSession == null) {
+                throw new DaoException("Entity is detached from DAO context");
+            }
+            GuerrillaProseDao targetDao = daoSession.getGuerrillaProseDao();
+            List<GuerrillaProse> guerrillaProseListNew = targetDao._queryMedia_GuerrillaProseList(id);
+            synchronized (this) {
+                if(guerrillaProseList == null) {
+                    guerrillaProseList = guerrillaProseListNew;
+                }
+            }
+        }
+        return guerrillaProseList;
+    }
+
+    /** Resets a to-many relationship, making the next get call to query for a fresh result. */
+    public synchronized void resetGuerrillaProseList() {
+        guerrillaProseList = null;
+    }
+
     public void delete() {
         if (myDao == null) {
             throw new DaoException("Entity is detached from DAO context");
@@ -130,7 +154,6 @@ public class Media implements android.os.Parcelable {
         myDao.delete(this);
     }
 
-    /** Convenient call for {@link AbstractDao#update(Object)}. Entity must attached to an entity context. */
     public void update() {
         if (myDao == null) {
             throw new DaoException("Entity is detached from DAO context");
@@ -138,7 +161,6 @@ public class Media implements android.os.Parcelable {
         myDao.update(this);
     }
 
-    /** Convenient call for {@link AbstractDao#refresh(Object)}. Entity must attached to an entity context. */
     public void refresh() {
         if (myDao == null) {
             throw new DaoException("Entity is detached from DAO context");

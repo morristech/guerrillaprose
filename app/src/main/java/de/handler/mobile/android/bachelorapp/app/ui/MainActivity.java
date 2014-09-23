@@ -437,7 +437,7 @@ public class MainActivity extends BaseActivity  implements ActionBar.TabListener
                     mediaController.getRemoteMediaString(prose.getRemote_media_id());
                 }
             } else {
-                proseController.setLocalProse(prose);
+                proseController.setLocalProse(prose, true);
             }
 
             // UPDATE
@@ -490,7 +490,7 @@ public class MainActivity extends BaseActivity  implements ActionBar.TabListener
             proseController.updateLocalProse(prose);
         } else {
             prose.setId(null);
-            proseController.setLocalProse(prose);
+            proseController.setLocalProse(prose, true);
         }
     }
 
@@ -589,10 +589,11 @@ public class MainActivity extends BaseActivity  implements ActionBar.TabListener
                 if (!localRemoteIds.contains(remote.getRemote_id())) {
                     remote.setShared(true);
                     remote.setId(null);
-                    proseController.setLocalProse(remote);
+                    proseController.setLocalProse(remote, false);
                 }
             }
         }
+        proseController.getLocalProse();
     }
 
 
@@ -696,6 +697,9 @@ public class MainActivity extends BaseActivity  implements ActionBar.TabListener
     public void onRemoteMediaUpdated(Long mediaId) {
         GuerrillaProse prose = app.getGuerrillaProse();
         if (mediaId != null && mediaId != -1L) {
+            proseController.updateRemoteProse(prose);
+        } else {
+            Log.e("MAIN_ACTIVITY", "updating media resulted in error. Updating prose anyway");
             proseController.updateRemoteProse(prose);
         }
     }

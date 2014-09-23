@@ -42,7 +42,6 @@ public class DeleteDialogFragment extends DialogFragment {
             Log.e(getTag(), "your activity has to implement OnProseListener");
             e.printStackTrace();
         }
-        setRetainInstance(true);
     }
 
 

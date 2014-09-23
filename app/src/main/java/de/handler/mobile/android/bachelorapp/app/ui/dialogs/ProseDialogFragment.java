@@ -201,9 +201,19 @@ public class ProseDialogFragment extends DialogFragment {
                             storeLocalImage();
                         }
 
+                        // Normalize tag string
+                        String tag = String.valueOf(mTagEditText.getText());
+                        if (tag.endsWith(" ")) {
+                            tag = tag.substring(0, tag.length()-2);
+                        }
+                        if (tag.startsWith(" ")) {
+                            tag = tag.replaceFirst(" ", "");
+                        }
+                        tag = tag.toUpperCase();
+
                         // Set all new data
                         mProse.setTitle(String.valueOf(mTitleEditText.getText()));
-                        mProse.setTag(String.valueOf(mTagEditText.getText()));
+                        mProse.setTag(tag);
                         mProse.setText(String.valueOf(mContentEditText.getText()));
 
                         mProse.setMedia(mMedia);

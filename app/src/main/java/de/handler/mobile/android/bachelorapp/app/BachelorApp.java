@@ -231,6 +231,10 @@ public class BachelorApp extends Application {
         this.pagerAuthors.add(pagerAuthor);
     }
 
+    public void clearSession() {
+        mDaoSession.clear();
+    }
+
 
     public static class Sorter implements Comparator<Tag> {
 

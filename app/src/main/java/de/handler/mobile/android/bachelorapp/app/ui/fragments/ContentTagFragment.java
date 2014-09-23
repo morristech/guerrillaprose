@@ -139,11 +139,13 @@ public class ContentTagFragment extends Fragment implements
         proseListFragment.setArguments(bundle);
 
         try {
-            getParentFragment().getChildFragmentManager().beginTransaction()
+            getFragmentManager().beginTransaction()
                     .replace(R.id.fragment_display_main_container, proseListFragment)
                     .addToBackStack(BACKSTACK_ENTRY)
                     .commit();
         } catch (IllegalStateException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
     }
@@ -178,9 +180,17 @@ public class ContentTagFragment extends Fragment implements
         bundle.putParcelableArrayList(ContentFragment.PROSE_LIST_FRAGMENT_PROSE_EXTRA, proseList);
 
         deleteDialogFragment.setArguments(bundle);
-        getActivity().getSupportFragmentManager().beginTransaction()
-                .add(deleteDialogFragment, MainActivity.DELETEDIALOG_TAG)
-                .commit();
+
+        try {
+            getFragmentManager().beginTransaction()
+                    .add(deleteDialogFragment, MainActivity.DELETEDIALOG_TAG)
+                    .commit();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

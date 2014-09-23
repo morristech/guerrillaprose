@@ -1,5 +1,6 @@
 package de.handler.mobile.android.bachelorapp.app.database;
 
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -10,7 +11,6 @@ import de.greenrobot.dao.DaoException;
 // KEEP INCLUDES END
 /**
  * Entity mapped to table GUERRILLA_PROSE.
-  * Implements the Parcelable interface to be send by bundles
  */
 public class GuerrillaProse implements android.os.Parcelable {
 

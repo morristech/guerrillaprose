@@ -97,18 +97,21 @@ public class ProseController {
      * Local CRUD Methods
      */
     @Background
-    public void setLocalProse(GuerrillaProse prose) {
+    public void setLocalProse(GuerrillaProse prose, boolean notify) {
         this.openDatabase();
 
         try {
+            prose.setTag(prose.getTag().toLowerCase());
             prose.setId(mProseDao.insert(prose));
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
             Toast.makeText(mContext, mContext.getString(R.string.local_not_saved), Toast.LENGTH_LONG).show();
         }
 
-        for (OnProseListener listener : mProseListeners) {
-            listener.onLocalProseSet(prose);
+        if (notify) {
+            for (OnProseListener listener : mProseListeners) {
+                listener.onLocalProseSet(prose);
+            }
         }
     }
 
@@ -157,7 +160,6 @@ public class ProseController {
         this.openDatabase();
         if (prose != null && prose.getId() != null) {
             mProseDao.update(prose);
-
             for (OnProseListener listener : mProseListeners) {
                 listener.onLocalProseUpdated(prose);
             }
@@ -180,8 +182,12 @@ public class ProseController {
 
         prose.delete();
         // delete picture from sd card
-        boolean deleted = mediaController.deleteMediaFromDisk(Uri.parse(media.getUrl()));
-        Log.d("PROSE_CONTROLLER", "image deleted, result: " + deleted);
+        if (media != null && media.getUrl() != null) {
+            boolean deleted = mediaController.deleteMediaFromDisk(Uri.parse(media.getUrl()));
+            Log.d("PROSE_CONTROLLER", "image deleted, result: " + deleted);
+        } else {
+            Log.d("PROSE_CONTROLLER", "image not deleted, as no url found");
+        }
 
         for (OnProseListener listener : mProseListeners) {
             listener.onLocalProseDeleted(remoteProseId, shared);
@@ -329,13 +335,12 @@ public class ProseController {
         ArrayList<Tag> tags = new ArrayList<Tag>();
         for (GuerrillaProse prose : proses) {
             String tag = prose.getTag();
-            tag = tag.replace(" ", "");
             boolean found = false;
 
             // iterate through tags and if tag already in
             // list augment the counter
             for (Tag tagVO : tags) {
-                if (tagVO.getTag().toUpperCase().equals(tag.toUpperCase())) {
+                if (tagVO.getTag().compareToIgnoreCase(tag) == 0) {
                     found = true;
                     int tagCount = tagVO.getCount() + 1;
                     tagVO.setCount(tagCount);

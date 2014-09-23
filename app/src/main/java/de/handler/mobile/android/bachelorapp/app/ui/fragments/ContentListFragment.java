@@ -29,7 +29,6 @@ import de.handler.mobile.android.bachelorapp.app.controllers.MediaTypeController
 import de.handler.mobile.android.bachelorapp.app.controllers.ProseController;
 import de.handler.mobile.android.bachelorapp.app.database.GuerrillaProse;
 import de.handler.mobile.android.bachelorapp.app.database.Media;
-import de.handler.mobile.android.bachelorapp.app.database.MediaType;
 import de.handler.mobile.android.bachelorapp.app.interfaces.OnBackPressedListener;
 import de.handler.mobile.android.bachelorapp.app.interfaces.OnMediaListener;
 import de.handler.mobile.android.bachelorapp.app.interfaces.OnProseListener;
@@ -154,14 +153,16 @@ public class ContentListFragment extends ListFragment implements AdapterView.OnI
         Bitmap bitmap = null;
 
         if (media != null) {
-            MediaType mediaType = mediaTypeController.getMediaType
-                    (media.getMedia_type_id());
+            //MediaType mediaType = mediaTypeController.getMediaType
+            //        (media.getMedia_type_id());
 
             // In further implementations the media may also be audio or video.
             // Therefore check if it is an image and if yes put it into bundle
-            if (mediaType.getMedia_type().equals(MediaTypeController.MEDIA_TYPE_IMAGE)) {
+            //if (mediaType.getMedia_type().equals(MediaTypeController.MEDIA_TYPE_IMAGE)) {
+            if (media.getUrl() != null && !media.getUrl().equals("")) {
                 bitmap = mediaController.getImageFromDisk(media.getUrl());
             }
+            //}
         } else {
             Log.e("CONTENT_LIST_FRAGMENT", "An error occurred when trying to access the prose' media");
         }
