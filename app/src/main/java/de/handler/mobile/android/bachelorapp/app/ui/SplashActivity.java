@@ -117,6 +117,9 @@ public class SplashActivity extends Activity implements OnFlickrListener, OnPros
         // init dao session for app context as recommended by green dao
         app.openDaoSession();
 
+        // init memory cache
+        app.initMemoryCache();
+
         networkController.checkNetworkState();
 
         // Get actual phone's API level and show round progress bar

@@ -5,7 +5,7 @@
     android:background="@color/transparent_white_80"
     tools:context="de.handler.mobile.android.bachelorapp.app.ui.BigPictureActivity">
 
-    <ImageView
+    <de.handler.mobile.android.bachelorapp.app.helper.CustomNetworkImageView
         android:id="@+id/activity_big_picture_image_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

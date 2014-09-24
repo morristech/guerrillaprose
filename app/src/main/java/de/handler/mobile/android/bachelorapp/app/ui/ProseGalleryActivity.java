@@ -1,8 +1,6 @@
 package de.handler.mobile.android.bachelorapp.app.ui;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -23,7 +21,6 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +31,7 @@ import de.handler.mobile.android.bachelorapp.app.controllers.ProseController;
 import de.handler.mobile.android.bachelorapp.app.controllers.UserController;
 import de.handler.mobile.android.bachelorapp.app.database.GuerrillaProse;
 import de.handler.mobile.android.bachelorapp.app.database.Media;
+import de.handler.mobile.android.bachelorapp.app.helper.MemoryCache;
 import de.handler.mobile.android.bachelorapp.app.interfaces.OnMediaListener;
 import de.handler.mobile.android.bachelorapp.app.ui.fragments.GalleryContainerFragment_;
 
@@ -42,6 +40,7 @@ import de.handler.mobile.android.bachelorapp.app.ui.fragments.GalleryContainerFr
  */
 @EActivity(R.layout.activity_gallery)
 public class ProseGalleryActivity extends BaseActivity implements OnMediaListener {
+
 
     @ViewById(R.id.gallery_pager)
     ViewPager mViewPager;
@@ -65,19 +64,18 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
 
     private List<Media> mMediaList = new ArrayList<Media>();
     private ArrayList<GuerrillaProse> mProseList;
-    private List<Bitmap> mImageList = new ArrayList<Bitmap>();
     private int mListFragmentPosition;
 
+    private MemoryCache memoryCache;
 
     public static final String GALLERY_PROSE_PROSE_LIST_EXTRA = "gallery_prose_prose_list_extra";
     public static final String GALLERY_PROSE_EXTRA = "gallery_prose_extra";
+    public static final String GALLERY_MEDIA_EXTRA = "gallery_media_extra";
     public static final String GALLERY_POSITION_EXTRA = "gallery_item_position_extra";
-    private File mCacheDir;
 
 
     @AfterViews
     public void init() {
-        mCacheDir = getCacheDir();
 
         ActionBar actionBar = setupActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -90,12 +88,36 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
 
         app.setImageFromFlickr(false);
 
+        // Init Memory Cache
+        memoryCache = app.getMemoryCache();
+
         for (GuerrillaProse prose : mProseList) {
-            mediaController.getRemoteMedia(prose.getRemote_media_id());
+            if (memoryCache.getMedia(String.valueOf(prose.getRemote_media_id())) == null) {
+                mediaController.getRemoteMedia(prose.getRemote_media_id());
+            } else {
+                Media media = memoryCache.getMedia(String.valueOf(prose.getRemote_media_id()));
+                app.addPagerAuthor(media.getMedia_author());
+                mMediaList.add(media);
+
+                if (mMediaList.size() == mProseList.size()) {
+                    this.setupViewPager();
+                }
+            }
         }
     }
 
 
+    @Override
+    public void onRemoteMediaReceived(Media media) {
+        mMediaList.add(media);
+        app.addPagerAuthor(media.getMedia_author());
+
+        memoryCache.putMedia(String.valueOf(media.getId()), media);
+
+        if (mMediaList.size() == mProseList.size()) {
+            this.setupViewPager();
+        }
+    }
 
 
     @UiThread
@@ -109,27 +131,7 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
     }
 
     @Override
-    public void onRemoteMediaStringReceived(String base64, Long media) {
-
-        Bitmap bitmap = mediaController.base64ToBitmap(base64);
-        if (bitmap == null) {
-            bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.watermark);
-        }
-        mImageList.add(bitmap);
-
-        // TODO: put images into cache
-
-        if (mImageList.size() == mProseList.size()) {
-            app.setPagerImages(mImageList);
-            this.setupViewPager();
-        }
-    }
-
-    @Override
-    public void onRemoteMediaReceived(Media media) {
-        mMediaList.add(media);
-        app.addPagerAuthor(media.getMedia_author());
-        mediaController.getRemoteMediaString(media.getId());
+    public void onRemoteMediaStringReceived(String base64, Long mediaId) {
     }
 
     @Override
@@ -165,10 +167,17 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
             mViewPager.setOnPageChangeListener(this);
         }
 
+        private boolean set = false;
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            app.setTitleImageAuthor(mMediaList.get(position).getMedia_author());
+
+            if (!set && mMediaList.size() == 1 || !set && position == 0) {
+                app.setCurrentMedia(mMediaList.get(position));
+                app.setTitleImageAuthor(mMediaList.get(position).getMedia_author());
+                set = true;
+            }
+
             return super.instantiateItem(container, position);
         }
 
@@ -178,6 +187,7 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
             GalleryContainerFragment_ gallery = new GalleryContainerFragment_();
 
             Bundle bundle = new Bundle();
+            bundle.putParcelable(GALLERY_MEDIA_EXTRA, mMediaList.get(position));
             bundle.putParcelable(GALLERY_PROSE_EXTRA, mProseList.get(position));
             bundle.putInt(GALLERY_POSITION_EXTRA, position);
 
@@ -214,6 +224,8 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
         @Override
         public void onPageSelected(int position) {
             Log.d("FragmentStatePagerAdapter", "page: " + String.valueOf(position));
+            app.setCurrentMedia(mMediaList.get(position));
+            app.setTitleImageAuthor(mMediaList.get(position).getMedia_author());
         }
 
         @Override
@@ -247,6 +259,9 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
                 NavUtils.navigateUpFromSameTask(this);
+
+                // Returning to MainActivity - set current Media to null
+                app.setCurrentMedia(null);
                 return true;
         }
         return super.onOptionsItemSelected(item);

@@ -21,8 +21,8 @@ android {
         applicationId "de.handler.mobile.android.bachelorapp.app"
         minSdkVersion 10
         targetSdkVersion 19
-        versionCode 22
-        versionName "0.5.8"
+        versionCode 24
+        versionName "0.6"
     }
 
     configurations.compile {
@@ -101,6 +101,9 @@ dependencies {
     // ORM Mapper for android
     compile 'de.greenrobot:greendao-generator:1.+'
     compile 'de.greenrobot:greendao:1.+'
+
+    // Image Loader
+    compile 'com.mcxiaoke.volley:library:1.0.+'
 
     //Test Dependencies
     // not compiled with compileAndroidTest as the package of test is the same as app.

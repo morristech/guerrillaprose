@@ -1,28 +1,24 @@
 package de.handler.mobile.android.bachelorapp.app.ui.fragments;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.Volley;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.App;
-import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import de.handler.mobile.android.bachelorapp.app.BachelorApp;
 import de.handler.mobile.android.bachelorapp.app.R;
 import de.handler.mobile.android.bachelorapp.app.database.Media;
+import de.handler.mobile.android.bachelorapp.app.helper.MemoryCache;
 import de.handler.mobile.android.bachelorapp.app.ui.BigPictureActivity_;
 import de.handler.mobile.android.bachelorapp.app.ui.ProseGalleryActivity;
 
@@ -36,7 +32,7 @@ public class GalleryTitleFragment extends Fragment implements View.OnClickListen
     BachelorApp app;
 
     @ViewById(R.id.fragment_gallery_title_image)
-    ImageView mImage;
+    NetworkImageView mImage;
 
     @ViewById(R.id.fragment_gallery_title_image_author)
     TextView mCredits;
@@ -44,9 +40,6 @@ public class GalleryTitleFragment extends Fragment implements View.OnClickListen
     @ViewById(R.id.fragment_gallery_title_banner)
     TextView mTitleBanner;
 
-    private Bitmap mBitmap;
-
-    @Background
     @AfterViews
     void init() {
         // Create custom typeface
@@ -56,35 +49,24 @@ public class GalleryTitleFragment extends Fragment implements View.OnClickListen
             mCredits.setTypeface(myTypeface);
         }
 
-        int position = getArguments().getInt(ProseGalleryActivity.GALLERY_POSITION_EXTRA);
-        mBitmap = app.getPagerImages().get(position);
-        mImage.setImageBitmap(mBitmap);
+        Media media = getArguments().getParcelable(ProseGalleryActivity.GALLERY_MEDIA_EXTRA);
+        MemoryCache mMemoryCache = app.getMemoryCache();
+
+        if (media != null && media.getRemote_url() != null) {
+            ImageLoader imageLoader = new ImageLoader(Volley.newRequestQueue(getActivity()), mMemoryCache);
+            int start = media.getRemote_url().lastIndexOf("/");
+            String url = media.getRemote_url().substring(start);
+
+            String mediaDir = "http://mortoncornelius.no-ip.biz/guerrilla-prose/public/media";
+            mImage.setImageUrl(mediaDir + url, imageLoader);
+        }
+
         mImage.setOnClickListener(this);
         mCredits.setText(app.getTitleImageAuthor());
     }
 
     @Override
     public void onClick(View v) {
-        app.setTitleImage(mBitmap);
         getActivity().startActivity(new Intent(getActivity(), BigPictureActivity_.class));
-    }
-
-
-    @Background
-    void getRemoteImage(Media media) {
-        try {
-            String guerrillaProseServer
-                    = "http://mortoncornelius.no-ip.biz/guerrilla-prose/public/index.php";
-            URL url = new URL(guerrillaProseServer + media.getRemote_url());
-            Object content = url.getContent();
-            InputStream is = (InputStream) content;
-            Drawable mDrawable = Drawable.createFromStream(is, "src");
-
-            mImage.setImageDrawable(mDrawable);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

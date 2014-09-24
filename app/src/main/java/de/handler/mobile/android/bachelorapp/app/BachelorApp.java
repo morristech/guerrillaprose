@@ -15,12 +15,9 @@ import java.util.List;
 import de.handler.mobile.android.bachelorapp.app.controllers.Tag;
 import de.handler.mobile.android.bachelorapp.app.database.DaoMaster;
 import de.handler.mobile.android.bachelorapp.app.database.DaoSession;
-import de.handler.mobile.android.bachelorapp.app.database.GuerrillaDao;
 import de.handler.mobile.android.bachelorapp.app.database.GuerrillaProse;
-import de.handler.mobile.android.bachelorapp.app.database.GuerrillaProseDao;
 import de.handler.mobile.android.bachelorapp.app.database.Media;
-import de.handler.mobile.android.bachelorapp.app.database.MediaDao;
-import de.handler.mobile.android.bachelorapp.app.database.MediaTypeDao;
+import de.handler.mobile.android.bachelorapp.app.helper.MemoryCache;
 
 /**
  * Application Object for globally used data
@@ -38,23 +35,22 @@ public class BachelorApp extends Application {
 
     private Uri tempImageUri;
     private Uri lastFileUri;
+
     private Bitmap titleImage;
     private String titleImageAuthor;
     private GuerrillaProse guerrillaProse;
+    private Media currentMedia = null;
 
     private ArrayList<Media> pendingMedia = new ArrayList<Media>();
     private ArrayList<Tag> localTags = new ArrayList<Tag>();
     private ArrayList<Tag> remoteTags = new ArrayList<Tag>();
 
     private ArrayList<GuerrillaProse> remoteProses = new ArrayList<GuerrillaProse>();
-    private List<Bitmap> pagerImages = new ArrayList<Bitmap>();
     private List<String> pagerAuthors = new ArrayList<String>();
 
+    private MemoryCache memoryCache;
+
     private DaoSession mDaoSession;
-    private MediaTypeDao mediaTypeDao;
-    private MediaDao mediaDao;
-    private GuerrillaDao guerrillaDao;
-    private GuerrillaProseDao guerrillaProseDao;
 
 
     /**
@@ -207,14 +203,6 @@ public class BachelorApp extends Application {
         this.isImageFromFlickr = isImageFromFlickr;
     }
 
-    public List<Bitmap> getPagerImages() {
-        return pagerImages;
-    }
-
-    public void setPagerImages(List<Bitmap> pagerImages) {
-        this.pagerImages = pagerImages;
-    }
-
     public Uri getLastFileUri() {
         return lastFileUri;
     }
@@ -233,6 +221,22 @@ public class BachelorApp extends Application {
 
     public void clearSession() {
         mDaoSession.clear();
+    }
+
+    public MemoryCache getMemoryCache() {
+        return memoryCache;
+    }
+
+    public void initMemoryCache() {
+        memoryCache = new MemoryCache();
+    }
+
+    public Media getCurrentMedia() {
+        return currentMedia;
+    }
+
+    public void setCurrentMedia(Media currentMedia) {
+        this.currentMedia = currentMedia;
     }
 
 

@@ -17,4 +17,6 @@ public class FlickrAuthor {
             public String username;
         }
     }
+
+
 }

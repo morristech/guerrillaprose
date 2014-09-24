@@ -265,6 +265,8 @@ public class MainActivity extends BaseActivity  implements ActionBar.TabListener
                 // reset flickr credits
                 app.setImageFromFlickr(false);
                 app.setTitleImageAuthor(userController.getLocalUser().getSurname() + " " + userController.getLocalUser().getName());
+                app.setCurrentMedia(null);
+
                 mReturningWithResult = true;
             } else if (resultCode == RESULT_CANCELED) {
                 mReturningWithResult = false;
@@ -276,6 +278,8 @@ public class MainActivity extends BaseActivity  implements ActionBar.TabListener
                 // reset flickr credits
                 app.setImageFromFlickr(false);
                 app.setTitleImageAuthor(userController.getLocalUser().getSurname() + " " + userController.getLocalUser().getName());
+                app.setCurrentMedia(null);
+
                 Uri selectedImageUri = data.getData();
                 String selectedImagePath = mediaController.getRealPathFromURI(this, selectedImageUri);
                 Log.i("Image File Path", "" + selectedImagePath);

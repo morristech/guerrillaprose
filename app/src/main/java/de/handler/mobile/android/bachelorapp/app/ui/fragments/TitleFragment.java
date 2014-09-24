@@ -95,7 +95,6 @@ public class TitleFragment extends Fragment implements View.OnClickListener {
     }
 
     private void startBigPicture() {
-        app.setTitleImage(mBitmap);
         getActivity().startActivity(new Intent(getActivity(), BigPictureActivity_.class));
     }
 
