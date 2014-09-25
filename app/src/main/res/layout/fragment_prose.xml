@@ -14,7 +14,6 @@
         android:maxLength="333"
         android:background="@android:color/transparent"
         android:textColor="@color/transparent_grey_80"
-        android:inputType="textMultiLine|textAutoCorrect|textAutoComplete"
         android:layout_gravity="center"
         android:imeActionLabel="@string/fragment_write_send"
         android:imeOptions="actionSend"

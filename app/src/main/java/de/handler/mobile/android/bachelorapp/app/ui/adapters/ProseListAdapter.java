@@ -2,6 +2,7 @@ package de.handler.mobile.android.bachelorapp.app.ui.adapters;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,16 +54,17 @@ public class ProseListAdapter extends BaseAdapter {
         // "recycled view" design pattern
         //if (convertView == null) {
             // Create custom typeface
-            //Typeface myTypeface = Typeface.createFromAsset(mContext.getAssets(), "fonts/Roboto-Thin.ttf");
+            Typeface myTypeface = Typeface.createFromAsset(mContext.getAssets(), "fonts/Roboto-Light.ttf");
 
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.adapter_prose_list_item, null);
 
             ImageView image = (ImageView) view.findViewById(R.id.adapter_prose_icon);
             TextView imageText = (TextView) view.findViewById(R.id.adapter_prose_icon_text);
-            //imageText.setTypeface(myTypeface);
+            imageText.setTypeface(myTypeface);
 
             TextView text = (TextView) view.findViewById(R.id.adapter_prose_text);
+            imageText.setTypeface(myTypeface);
 
             Drawable drawable = mContext.getResources().getDrawable(R.drawable.tag_item_selector).mutate();
             String titleString = mGuerrillaProseList.get(position).getTitle();

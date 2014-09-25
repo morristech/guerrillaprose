@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -15,7 +16,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,26 +55,18 @@ public class ProseDialogFragment extends DialogFragment {
     private EditText mContentEditText;
     private EditText mTagEditText;
 
-    private TextView mTitleTextView;
-    private TextView mContentTextView;
-    private TextView mTagTextView;
-    private TextView mAuthorTextView;
-
     private CheckBox mPublicCheckbox;
 
     private OnProseListener onProseListener;
     private OnMediaListener onMediaListener;
 
-
     private GuerrillaProse mProse;
     private Bitmap mBitmap;
     private Media mMedia;
     private boolean mUpdate;
-    private boolean mDevice;
     private boolean mServerStatusChanged;
 
     private ImageView mImageView;
-    private TextView mImageAuthorTextView;
 
 
     @App
@@ -111,6 +103,9 @@ public class ProseDialogFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        // Create custom typeface
+        Typeface myTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Light.ttf");
+
         proseController.addListener(onProseListener);
         mediaController.addListener(onMediaListener);
         restErrorHandler.setContext(getActivity());
@@ -127,16 +122,17 @@ public class ProseDialogFragment extends DialogFragment {
         View view = inflater.inflate(R.layout.dialog_prose, null);
 
         mImageView = (ImageView) view.findViewById(R.id.dialog_verification_background_image);
-        mImageAuthorTextView = (TextView) view.findViewById(R.id.dialog_verification_image_artist);
+        TextView mImageAuthorTextView = (TextView) view.findViewById(R.id.dialog_verification_image_artist);
 
         if (!mUpdate && app.isImageFromFlickr()) {
             mImageAuthorTextView.setText(app.getTitleImageAuthor());
         }
 
         // Editable fields for local use
-        LinearLayout localContainer = (LinearLayout) view.findViewById(R.id.dialog_verification_container_local);
         mTitleEditText = (EditText) view.findViewById(R.id.dialog_verification_title);
+        mTitleEditText.setTypeface(myTypeface);
         mContentEditText = (EditText) view.findViewById(R.id.dialog_verification_content);
+        mContentEditText.setTypeface(myTypeface);
         mTagEditText = (EditText) view.findViewById(R.id.dialog_verification_tag);
 
         mPublicCheckbox = (CheckBox) view.findViewById(R.id.dialog_verification_checkbox);

@@ -1,6 +1,7 @@
 package de.handler.mobile.android.bachelorapp.app.ui.fragments;
 
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
@@ -44,6 +45,10 @@ public class ProseFragment extends Fragment implements View.OnClickListener {
         // as EditorAction is only applied in horizontal and editing mode.
         // In vertical layout an action has to be manually defined
         mIconSend.setOnClickListener(this);
+
+        // Create custom typeface
+        Typeface myTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Light.ttf");
+        mEditText.setTypeface(myTypeface);
 
         // OnEditorActionListener is the Call back for the action defined
         // in fragment_write.xml for the editText field. In horizontal mode

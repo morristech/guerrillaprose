@@ -25,7 +25,6 @@ import java.util.List;
 import de.handler.mobile.android.bachelorapp.app.BachelorApp;
 import de.handler.mobile.android.bachelorapp.app.R;
 import de.handler.mobile.android.bachelorapp.app.controllers.MediaController;
-import de.handler.mobile.android.bachelorapp.app.controllers.MediaTypeController;
 import de.handler.mobile.android.bachelorapp.app.controllers.ProseController;
 import de.handler.mobile.android.bachelorapp.app.database.GuerrillaProse;
 import de.handler.mobile.android.bachelorapp.app.database.Media;
@@ -49,8 +48,6 @@ public class ContentListFragment extends ListFragment implements AdapterView.OnI
     @Bean
     MediaController mediaController;
 
-    @Bean
-    MediaTypeController mediaTypeController;
 
     @App
     BachelorApp app;

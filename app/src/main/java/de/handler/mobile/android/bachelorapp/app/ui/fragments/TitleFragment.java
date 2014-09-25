@@ -1,8 +1,6 @@
 package de.handler.mobile.android.bachelorapp.app.ui.fragments;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -54,20 +52,12 @@ public class TitleFragment extends Fragment implements View.OnClickListener {
     BachelorApp app;
 
 
-    private Bitmap mBitmap;
-
     @AfterViews
     void init() {
         // Create custom typeface
         Typeface myTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Thin.ttf");
 
-        mBitmap = app.getTitleImage();
-
-        if (mBitmap == null) {
-            mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.watermark);
-        } else {
-            mImageView.setImageBitmap(mBitmap);
-        }
+        mImageView.setImageBitmap(app.getTitleImage());
 
         mImageTextView.setText(app.getTitleImageAuthor());
         mImageTextView.setTypeface(myTypeface);
