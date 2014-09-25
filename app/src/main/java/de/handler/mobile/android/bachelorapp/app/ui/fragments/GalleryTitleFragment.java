@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
-import com.android.volley.toolbox.Volley;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.App;
@@ -18,7 +17,6 @@ import org.androidannotations.annotations.ViewById;
 import de.handler.mobile.android.bachelorapp.app.BachelorApp;
 import de.handler.mobile.android.bachelorapp.app.R;
 import de.handler.mobile.android.bachelorapp.app.database.Media;
-import de.handler.mobile.android.bachelorapp.app.helper.MemoryCache;
 import de.handler.mobile.android.bachelorapp.app.ui.BigPictureActivity_;
 import de.handler.mobile.android.bachelorapp.app.ui.ProseGalleryActivity;
 
@@ -50,15 +48,16 @@ public class GalleryTitleFragment extends Fragment implements View.OnClickListen
         }
 
         Media media = getArguments().getParcelable(ProseGalleryActivity.GALLERY_MEDIA_EXTRA);
-        MemoryCache mMemoryCache = app.getMemoryCache();
 
         if (media != null && media.getRemote_url() != null) {
-            ImageLoader imageLoader = new ImageLoader(Volley.newRequestQueue(getActivity()), mMemoryCache);
+            ImageLoader imageLoader = app.getImageLoader();
+
             int start = media.getRemote_url().lastIndexOf("/");
             String url = media.getRemote_url().substring(start);
 
             String mediaDir = "http://mortoncornelius.no-ip.biz/guerrilla-prose/public/media";
             mImage.setImageUrl(mediaDir + url, imageLoader);
+            mImage.setErrorImageResId(R.drawable.watermark);
         }
 
         mImage.setOnClickListener(this);
@@ -68,5 +67,11 @@ public class GalleryTitleFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         getActivity().startActivity(new Intent(getActivity(), BigPictureActivity_.class));
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        app.setCurrentMedia(null);
     }
 }

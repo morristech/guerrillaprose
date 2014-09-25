@@ -4,6 +4,9 @@ import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.support.v4.util.LruCache;
+
+import com.android.volley.toolbox.ImageLoader;
 
 import org.androidannotations.annotations.EApplication;
 
@@ -17,7 +20,7 @@ import de.handler.mobile.android.bachelorapp.app.database.DaoMaster;
 import de.handler.mobile.android.bachelorapp.app.database.DaoSession;
 import de.handler.mobile.android.bachelorapp.app.database.GuerrillaProse;
 import de.handler.mobile.android.bachelorapp.app.database.Media;
-import de.handler.mobile.android.bachelorapp.app.helper.MemoryCache;
+import de.handler.mobile.android.bachelorapp.app.helper.BitmapCache;
 
 /**
  * Application Object for globally used data
@@ -48,7 +51,9 @@ public class BachelorApp extends Application {
     private ArrayList<GuerrillaProse> remoteProses = new ArrayList<GuerrillaProse>();
     private List<String> pagerAuthors = new ArrayList<String>();
 
-    private MemoryCache memoryCache;
+    private ImageLoader imageLoader;
+    private ImageLoader.ImageCache bitmapCache;
+    private android.support.v4.util.LruCache<String, Media> mediaCache;
 
     private DaoSession mDaoSession;
 
@@ -223,13 +228,6 @@ public class BachelorApp extends Application {
         mDaoSession.clear();
     }
 
-    public MemoryCache getMemoryCache() {
-        return memoryCache;
-    }
-
-    public void initMemoryCache() {
-        memoryCache = new MemoryCache();
-    }
 
     public Media getCurrentMedia() {
         return currentMedia;
@@ -237,6 +235,37 @@ public class BachelorApp extends Application {
 
     public void setCurrentMedia(Media currentMedia) {
         this.currentMedia = currentMedia;
+    }
+
+
+    public ImageLoader getImageLoader() {
+        return imageLoader;
+    }
+
+    public void initImageLoader() {
+        imageLoader = new ImageLoader(BitmapCache.newRequestQueue(this), bitmapCache);
+    }
+
+
+    // Cache
+    public void initBitmapCache() {
+        bitmapCache = new BitmapCache();
+    }
+
+    public LruCache<String, Media> getMediaCache() {
+        return mediaCache;
+    }
+
+    public void initMediaCache() {
+        // Get max available VM memory, exceeding this amount will throw an
+        // OutOfMemory exception. Stored in kilobytes as LruCache takes an
+        // int in its constructor.
+        final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
+
+        // Use 1/4 th of the available memory for this memory cache.
+        final int cacheSize = maxMemory / 4;
+
+        mediaCache = new LruCache<String, Media>(cacheSize);
     }
 
 

@@ -117,8 +117,12 @@ public class SplashActivity extends Activity implements OnFlickrListener, OnPros
         // init dao session for app context as recommended by green dao
         app.openDaoSession();
 
-        // init memory cache
-        app.initMemoryCache();
+        // init cache
+        app.initBitmapCache();
+        app.initMediaCache();
+
+        // init image loader for volley
+        app.initImageLoader();
 
         networkController.checkNetworkState();
 
@@ -180,7 +184,7 @@ public class SplashActivity extends Activity implements OnFlickrListener, OnPros
             mProgress++;
             mProgressBar.setProgress(mProgress);
 
-            Toast.makeText(mFinalContext, getString(R.string.server_unreachbale), Toast.LENGTH_LONG).show();
+            this.showInactiveServerToast();
             proseController.getLocalProse();
         }
     }
@@ -268,9 +272,14 @@ public class SplashActivity extends Activity implements OnFlickrListener, OnPros
         if (app.isServerOnline()) {
             this.getGuerrillaData();
         } else {
-            Toast.makeText(this, getString(R.string.server_unreachbale), Toast.LENGTH_LONG).show();
+            this.showInactiveServerToast();
             proseController.getLocalProse();
         }
+    }
+
+    @UiThread
+    public void showInactiveServerToast() {
+        Toast.makeText(this, getString(R.string.server_unreachbale), Toast.LENGTH_LONG).show();
     }
 
 

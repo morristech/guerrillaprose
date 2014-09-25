@@ -31,7 +31,6 @@ import de.handler.mobile.android.bachelorapp.app.controllers.ProseController;
 import de.handler.mobile.android.bachelorapp.app.controllers.UserController;
 import de.handler.mobile.android.bachelorapp.app.database.GuerrillaProse;
 import de.handler.mobile.android.bachelorapp.app.database.Media;
-import de.handler.mobile.android.bachelorapp.app.helper.MemoryCache;
 import de.handler.mobile.android.bachelorapp.app.interfaces.OnMediaListener;
 import de.handler.mobile.android.bachelorapp.app.ui.fragments.GalleryContainerFragment_;
 
@@ -66,7 +65,7 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
     private ArrayList<GuerrillaProse> mProseList;
     private int mListFragmentPosition;
 
-    private MemoryCache memoryCache;
+    private android.support.v4.util.LruCache<String, Media> mediaCache;
 
     public static final String GALLERY_PROSE_PROSE_LIST_EXTRA = "gallery_prose_prose_list_extra";
     public static final String GALLERY_PROSE_EXTRA = "gallery_prose_extra";
@@ -89,13 +88,13 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
         app.setImageFromFlickr(false);
 
         // Init Memory Cache
-        memoryCache = app.getMemoryCache();
+        mediaCache = app.getMediaCache();
 
         for (GuerrillaProse prose : mProseList) {
-            if (memoryCache.getMedia(String.valueOf(prose.getRemote_media_id())) == null) {
+            if (mediaCache.get(String.valueOf(prose.getRemote_media_id())) == null) {
                 mediaController.getRemoteMedia(prose.getRemote_media_id());
             } else {
-                Media media = memoryCache.getMedia(String.valueOf(prose.getRemote_media_id()));
+                Media media = mediaCache.get(String.valueOf(prose.getRemote_media_id()));
                 app.addPagerAuthor(media.getMedia_author());
                 mMediaList.add(media);
 
@@ -110,9 +109,11 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
     @Override
     public void onRemoteMediaReceived(Media media) {
         mMediaList.add(media);
-        app.addPagerAuthor(media.getMedia_author());
 
-        memoryCache.putMedia(String.valueOf(media.getId()), media);
+        if (media != null) {
+            app.addPagerAuthor(media.getMedia_author());
+            mediaCache.put(String.valueOf(media.getId()), media);
+        }
 
         if (mMediaList.size() == mProseList.size()) {
             this.setupViewPager();
@@ -189,7 +190,6 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
             Bundle bundle = new Bundle();
             bundle.putParcelable(GALLERY_MEDIA_EXTRA, mMediaList.get(position));
             bundle.putParcelable(GALLERY_PROSE_EXTRA, mProseList.get(position));
-            bundle.putInt(GALLERY_POSITION_EXTRA, position);
 
             gallery.setArguments(bundle);
             return gallery;

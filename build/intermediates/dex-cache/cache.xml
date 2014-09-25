@@ -20,6 +20,12 @@
         revision="19.1.0"
         sha1="df4672ff2ad7d8232f47d967284cc011638b7825"/>
     <item
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/androidannotations-api-3.2-SNAPSHOT-7886d60373ffcf136c399f2db18121a620b48da9.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.2-SNAPSHOT/fe6d7af490ce1f67e05bc99d8d3363629becce57/androidannotations-api-3.2-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="fe6d7af490ce1f67e05bc99d8d3363629becce57"/>
+    <item
         dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/asm-util-5.0.1-2ad30e18481ce0204aeb873f181f4499939d69cf.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-util/5.0.1/7c8caddfbd0b2d7b844f8fcc75175b9cb9cf4724/asm-util-5.0.1.jar"
         jumboMode="false"
@@ -170,12 +176,6 @@
         revision="19.1.0"
         sha1="1b1e6e9d869acd704056d0a4223071a511c619e6"/>
     <item
-        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/androidannotations-api-3.2-SNAPSHOT-bda93f1075012b6f59d90c5014a1785c881c5f4f.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.2-SNAPSHOT/76ba4f2c6ef418a77618b8ff0345ad8ff657a932/androidannotations-api-3.2-SNAPSHOT.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="76ba4f2c6ef418a77618b8ff0345ad8ff657a932"/>
-    <item
         dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/classes-a15135ea6d91821e371e1082750186fff139c3d2.jar"
         jar="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
         jumboMode="false"
@@ -224,6 +224,12 @@
         revision="19.1.0"
         sha1="c6aa198b8d0bdf5262345fcbbf14f04e35726088"/>
     <item
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/junit-4.12-beta-2-bc83078f7625f6e9fad5e4a4dff567b1fdf7944e.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/junit/junit/4.12-beta-2/eb899c93c162058b6ae990e7e279507803edd1fb/junit-4.12-beta-2.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="eb899c93c162058b6ae990e7e279507803edd1fb"/>
+    <item
         dex="/media/Daten/Dropbox/Development/Android/BachelorApp/app/build/intermediates/pre-dexed/debug/hamcrest-core-1.3-334f20e14e8d6d7b439fdf738a07352f5c368555.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"
         jumboMode="false"
@@ -235,5 +241,11 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="6975da39a7040257bd51d21a231b76c915872d38"/>
+    <item
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/disklrucache-2.0.2-aafc88e3fc47cdf790403f81ce8024f5faebc315.jar"
+        jar="/home/nino/.gradle/caches/modules-2/files-2.1/com.jakewharton/disklrucache/2.0.2/93b399470e72c0bc8cb52379943b63c9aa586cd8/disklrucache-2.0.2.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="93b399470e72c0bc8cb52379943b63c9aa586cd8"/>
 
 </pre-dex-items>

@@ -105,6 +105,9 @@ dependencies {
     // Image Loader
     compile 'com.mcxiaoke.volley:library:1.0.+'
 
+    // Disk Cache
+    compile 'com.jakewharton:disklrucache:2.0.2'
+
     //Test Dependencies
     // not compiled with compileAndroidTest as the package of test is the same as app.
     // This again is to special use case of android annotations:
