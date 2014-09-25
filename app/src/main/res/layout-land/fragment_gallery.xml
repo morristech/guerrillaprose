@@ -1,0 +1,26 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_home_container_main"
+        tools:context=".ui.fragments.HomeFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:id="@+id/fragment_gallery_container_first"
+            android:orientation="vertical"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/fragment_gallery_container_second"
+            android:orientation="vertical"/>
+    </LinearLayout>
+
+</ScrollView>

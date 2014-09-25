@@ -20,7 +20,7 @@
         revision="19.1.0"
         sha1="df4672ff2ad7d8232f47d967284cc011638b7825"/>
     <item
-        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/androidannotations-api-3.2-SNAPSHOT-7886d60373ffcf136c399f2db18121a620b48da9.jar"
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/release/androidannotations-api-3.2-SNAPSHOT-7886d60373ffcf136c399f2db18121a620b48da9.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.2-SNAPSHOT/fe6d7af490ce1f67e05bc99d8d3363629becce57/androidannotations-api-3.2-SNAPSHOT.jar"
         jumboMode="false"
         revision="19.1.0"
@@ -56,7 +56,7 @@
         revision="19.1.0"
         sha1="c4a8d7305b23b8d043be12c979813b096df11f44"/>
     <item
-        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/robolectric-2.4-SNAPSHOT-458546d7f44f6de08eff55abc7c7bee6901033fe.jar"
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/release/robolectric-2.4-SNAPSHOT-458546d7f44f6de08eff55abc7c7bee6901033fe.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/org.robolectric/robolectric/2.4-SNAPSHOT/ed8b6d399c858b5a4379ceb3f32de94aeca4bed3/robolectric-2.4-SNAPSHOT.jar"
         jumboMode="false"
         revision="19.1.0"
@@ -74,7 +74,7 @@
         revision="19.1.0"
         sha1="08b53ba16fa62fb1034da8f1de200ddc407c8381"/>
     <item
-        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/library-1.0.6-9772593a3a853944b80069fe30286a7abd2392bf.jar"
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/release/library-1.0.6-9772593a3a853944b80069fe30286a7abd2392bf.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.volley/library/1.0.6/29b513697b61a2fdbc8a9c2ca5a9f2b0e63482a4/library-1.0.6.jar"
         jumboMode="false"
         revision="19.1.0"
@@ -104,7 +104,7 @@
         revision="19.1.0"
         sha1="dc13ae4faca6df981fc7aeb5a522d9db446d5d50"/>
     <item
-        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/classes-7a783ca1d6f41a972a029103eb646ced4e4e05ed.jar"
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/release/classes-7a783ca1d6f41a972a029103eb646ced4e4e05ed.jar"
         jar="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/19.1.0/classes.jar"
         jumboMode="false"
         revision="19.1.0"
@@ -176,7 +176,7 @@
         revision="19.1.0"
         sha1="1b1e6e9d869acd704056d0a4223071a511c619e6"/>
     <item
-        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/classes-a15135ea6d91821e371e1082750186fff139c3d2.jar"
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/release/classes-a15135ea6d91821e371e1082750186fff139c3d2.jar"
         jar="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
         jumboMode="false"
         revision="19.1.0"
@@ -224,7 +224,7 @@
         revision="19.1.0"
         sha1="c6aa198b8d0bdf5262345fcbbf14f04e35726088"/>
     <item
-        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/junit-4.12-beta-2-bc83078f7625f6e9fad5e4a4dff567b1fdf7944e.jar"
+        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/release/junit-4.12-beta-2-bc83078f7625f6e9fad5e4a4dff567b1fdf7944e.jar"
         jar="/home/nino/.gradle/caches/modules-2/files-2.1/junit/junit/4.12-beta-2/eb899c93c162058b6ae990e7e279507803edd1fb/junit-4.12-beta-2.jar"
         jumboMode="false"
         revision="19.1.0"
@@ -241,11 +241,5 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="6975da39a7040257bd51d21a231b76c915872d38"/>
-    <item
-        dex="/home/nino/Entwicklung/guerrillaprose/app/build/intermediates/pre-dexed/debug/disklrucache-2.0.2-aafc88e3fc47cdf790403f81ce8024f5faebc315.jar"
-        jar="/home/nino/.gradle/caches/modules-2/files-2.1/com.jakewharton/disklrucache/2.0.2/93b399470e72c0bc8cb52379943b63c9aa586cd8/disklrucache-2.0.2.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="93b399470e72c0bc8cb52379943b63c9aa586cd8"/>
 
 </pre-dex-items>

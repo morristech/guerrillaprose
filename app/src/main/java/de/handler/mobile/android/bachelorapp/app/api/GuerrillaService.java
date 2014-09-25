@@ -5,7 +5,6 @@ import org.androidannotations.annotations.rest.Get;
 import org.androidannotations.annotations.rest.Post;
 import org.androidannotations.annotations.rest.Put;
 import org.androidannotations.annotations.rest.RequiresAuthentication;
-import org.androidannotations.annotations.rest.RequiresCookie;
 import org.androidannotations.annotations.rest.Rest;
 import org.androidannotations.api.rest.RestClientErrorHandling;
 import org.springframework.http.converter.json.GsonHttpMessageConverter;
@@ -91,7 +90,7 @@ public interface GuerrillaService extends RestClientErrorHandling {
     Long setMediaType(String mediaType);
 
     @Delete("mediaTypes/{mediaType}")
-    @RequiresCookie("remember_me")
+    @RequiresAuthentication
     Long deleteMediaType(String mediaType);
 
 

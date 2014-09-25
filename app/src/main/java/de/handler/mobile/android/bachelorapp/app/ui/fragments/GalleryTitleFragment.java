@@ -1,13 +1,10 @@
 package de.handler.mobile.android.bachelorapp.app.ui.fragments;
 
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
-import android.view.View;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.App;
@@ -17,20 +14,20 @@ import org.androidannotations.annotations.ViewById;
 import de.handler.mobile.android.bachelorapp.app.BachelorApp;
 import de.handler.mobile.android.bachelorapp.app.R;
 import de.handler.mobile.android.bachelorapp.app.database.Media;
-import de.handler.mobile.android.bachelorapp.app.ui.BigPictureActivity_;
+import de.handler.mobile.android.bachelorapp.app.helper.CustomNetworkImageView;
 import de.handler.mobile.android.bachelorapp.app.ui.ProseGalleryActivity;
 
 /**
  * displays image of guerrilla prose
  */
 @EFragment(R.layout.fragment_gallery_title)
-public class GalleryTitleFragment extends Fragment implements View.OnClickListener {
+public class GalleryTitleFragment extends Fragment {
 
     @App
     BachelorApp app;
 
     @ViewById(R.id.fragment_gallery_title_image)
-    NetworkImageView mImage;
+    CustomNetworkImageView mImage;
 
     @ViewById(R.id.fragment_gallery_title_image_author)
     TextView mCredits;
@@ -60,18 +57,11 @@ public class GalleryTitleFragment extends Fragment implements View.OnClickListen
             mImage.setErrorImageResId(R.drawable.watermark);
         }
 
-        mImage.setOnClickListener(this);
         mCredits.setText(app.getTitleImageAuthor());
-    }
-
-    @Override
-    public void onClick(View v) {
-        getActivity().startActivity(new Intent(getActivity(), BigPictureActivity_.class));
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        app.setCurrentMedia(null);
     }
 }

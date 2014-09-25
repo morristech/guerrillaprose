@@ -42,7 +42,6 @@ public class BachelorApp extends Application {
     private Bitmap titleImage;
     private String titleImageAuthor;
     private GuerrillaProse guerrillaProse;
-    private Media currentMedia = null;
 
     private ArrayList<Media> pendingMedia = new ArrayList<Media>();
     private ArrayList<Tag> localTags = new ArrayList<Tag>();
@@ -226,15 +225,6 @@ public class BachelorApp extends Application {
 
     public void clearSession() {
         mDaoSession.clear();
-    }
-
-
-    public Media getCurrentMedia() {
-        return currentMedia;
-    }
-
-    public void setCurrentMedia(Media currentMedia) {
-        this.currentMedia = currentMedia;
     }
 
 

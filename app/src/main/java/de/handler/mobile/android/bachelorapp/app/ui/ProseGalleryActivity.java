@@ -174,7 +174,6 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
         public Object instantiateItem(ViewGroup container, int position) {
 
             if (!set && mMediaList.size() == 1 || !set && position == 0) {
-                app.setCurrentMedia(mMediaList.get(position));
                 app.setTitleImageAuthor(mMediaList.get(position).getMedia_author());
                 set = true;
             }
@@ -224,7 +223,6 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
         @Override
         public void onPageSelected(int position) {
             Log.d("FragmentStatePagerAdapter", "page: " + String.valueOf(position));
-            app.setCurrentMedia(mMediaList.get(position));
             app.setTitleImageAuthor(mMediaList.get(position).getMedia_author());
         }
 
@@ -260,8 +258,6 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
             case android.R.id.home:
                 NavUtils.navigateUpFromSameTask(this);
 
-                // Returning to MainActivity - set current Media to null
-                app.setCurrentMedia(null);
                 return true;
         }
         return super.onOptionsItemSelected(item);
