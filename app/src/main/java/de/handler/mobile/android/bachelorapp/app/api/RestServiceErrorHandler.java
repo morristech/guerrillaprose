@@ -35,12 +35,12 @@ public class RestServiceErrorHandler implements RestErrorHandler {
 
     @UiThread
     public void showToast(String message) {
-        if (!message.contains("I/O error")) {
+
 
             if (mContext != null) {
                 if (message.contains("500") || message.contains("expected")) {
                     message = mContext.getString(R.string.server_error);
-                } else if (message.contains("502")) {
+                } else if (message.contains("502") || message.contains("I/O error")) {
                     message = mContext.getString(R.string.server_temporarily_not_available);
                 } else if (message.contains("404")) {
                     message = mContext.getString(R.string.server_method_not_available);
@@ -49,6 +49,6 @@ public class RestServiceErrorHandler implements RestErrorHandler {
                 // Show a Toast in corresponding activity with error message
                 Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
             }
-        }
+
     }
 }

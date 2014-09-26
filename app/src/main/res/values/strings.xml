@@ -36,7 +36,7 @@
     <string name="server_error">Error while communicating with server</string>
     <string name="no_user">you have to create a user before using the app</string>
     <string name="no_tag">no tag</string>
-    <string name="server_temporarily_not_available">The server is temporarilly not available</string>
+    <string name="server_temporarily_not_available">The server is temporarily not available</string>
     <string name="author">author</string>
     <string name="home">home</string>
     <string name="device">device</string>
@@ -52,7 +52,7 @@
     <string name="wrong_credentials">your password does not match…</string>
     <string name="authentication_no_valid_email" />
     <string name="old_email">already registered</string>
-    <string name="user_created">user sucessfully created</string>
-    <string name="user_deleted">user sucessfully deleted on our servers</string>
+    <string name="user_created">user successfully created</string>
+    <string name="user_deleted">user successfully deleted on our servers</string>
 
 </resources>
