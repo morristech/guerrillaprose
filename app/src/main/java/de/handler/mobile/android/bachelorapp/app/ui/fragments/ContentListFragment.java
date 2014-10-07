@@ -11,6 +11,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.App;
@@ -76,19 +77,30 @@ public class ContentListFragment extends ListFragment implements AdapterView.OnI
         MainActivity_ mainActivity = (MainActivity_) getActivity();
         mainActivity.setOnBackPressedListener(this);
 
-        this.setUpHeader();
+        this.setUpHeader(null);
         // Get Extras
         mProseList = getArguments()
                 .getParcelableArrayList(ContentFragment.PROSE_LIST_FRAGMENT_TAG_EXTRA);
         mIsLocal = getArguments().getBoolean(ContentFragment.PROSE_DISPLAY_LOCAL);
+
+        // Set Title
+        this.setUpHeader(mProseList.get(0).getTag());
+
         this.initListAdapter(mProseList);
     }
 
 
     // TODO: add up navigation or display tag as title
-    private void setUpHeader() {
-        // Set a padding to list view at the size of the action bar
-        View padding = new View(getActivity());
+    private void setUpHeader(String title) {
+        View padding = null;
+        TextView texViewTitle = null;
+        if (title == null) {
+            // Set a padding to list view at the size of the action bar
+            padding = new View(getActivity());
+        } else {
+            texViewTitle = new TextView(getActivity());
+            texViewTitle.setText(title);
+        }
 
         // Calculate ActionBar height
         TypedValue tv = new TypedValue();
@@ -99,12 +111,18 @@ public class ContentListFragment extends ListFragment implements AdapterView.OnI
                     getResources().getDisplayMetrics());
         }
 
-        padding.setMinimumHeight(actionBarHeight);
-        padding.setBackgroundColor(getActivity().getResources().getColor(android.R.color.transparent));
+        if (title == null) {
+            padding.setMinimumHeight(actionBarHeight);
+            padding.setBackgroundColor(getActivity().getResources().getColor(android.R.color.transparent));
+        } else {
+            texViewTitle.setMinimumHeight(actionBarHeight);
+            texViewTitle.setBackgroundColor(getActivity().getResources().getColor(android.R.color.holo_blue_dark));
+        }
 
         // Add the header / padding
         try {
             getListView().addHeaderView(padding);
+            getListView().addHeaderView(texViewTitle);
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }
