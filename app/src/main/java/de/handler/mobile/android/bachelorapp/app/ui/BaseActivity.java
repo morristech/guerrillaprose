@@ -28,10 +28,8 @@ import de.handler.mobile.android.bachelorapp.app.interfaces.AppPreferences_;
  */
 @EActivity
 public abstract class BaseActivity extends ActionBarActivity {
-
     @Bean
     NetworkController networkController;
-
 
     // Shared Preferences as defined
     // in the AppPreferences Interface
@@ -118,9 +116,4 @@ public abstract class BaseActivity extends ActionBarActivity {
 
         return actionBar;
     }
-
-
-
-
-
 }

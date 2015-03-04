@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.NavUtils;
+import android.support.v4.util.LruCache;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
@@ -65,7 +66,7 @@ public class ProseGalleryActivity extends BaseActivity implements OnMediaListene
     private ArrayList<GuerrillaProse> mProseList;
     private int mListFragmentPosition;
 
-    private android.support.v4.util.LruCache<String, Media> mediaCache;
+    private LruCache<String, Media> mediaCache;
 
     public static final String GALLERY_PROSE_PROSE_LIST_EXTRA = "gallery_prose_prose_list_extra";
     public static final String GALLERY_PROSE_EXTRA = "gallery_prose_extra";

@@ -10,15 +10,15 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.android.tools.build:gradle:1.1.0'
 
         // small Gradle plugin that helps out when using an annotation processor
         // --> Android Annotations
         // makes the build code "available" to android studio
         // adds it to the source path
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.+'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.2'
         // plugin to use robolectric
-        classpath 'org.robolectric.gradle:gradle-android-test-plugin:0.+'
+        classpath 'org.robolectric:robolectric-gradle-plugin:1.0.1'
     }
 }
 

@@ -51,9 +51,6 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             style="@android:style/Widget.ProgressBar"/>
-
-
-
     </LinearLayout>
 
 
@@ -62,7 +59,7 @@
         android:layout_height="match_parent"
         android:id="@+id/splash_error_container"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="invisible">
 
         <TextView
             style="@style/textview_banner_style_splash"

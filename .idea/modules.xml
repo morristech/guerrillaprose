@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/BachelorApp.iml" filepath="$PROJECT_DIR$/BachelorApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/GuerillaProse.iml" filepath="$PROJECT_DIR$/GuerillaProse.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/guerrillaprose.iml" filepath="$PROJECT_DIR$/guerrillaprose.iml" />
     </modules>
   </component>
 </project>
